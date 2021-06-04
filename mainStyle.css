@@ -84,11 +84,6 @@ max-width: 100%;
 overflow: auto;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
 /* Colors */
 
 body { background: #181714; color: #fff687; }
@@ -114,4 +109,17 @@ h3 { color: #aaf3f3; }
 @media only screen and (orientation: landscape) and (max-width: 850px) {
     body { font-size: 12pt; -webkit-text-size-adjust: 100%;
     padding-left: 0; padding-right: 0; }
+}
+
+.mainTitle {
+    display: inline-block;
+}
+
+.mainTitle img {
+    width: 70px;
+    height: 0 auto;
+    
+    position: relative;
+    top: 20px;
+    left: 5px;
 }
