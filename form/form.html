@@ -528,17 +528,21 @@
       setTimeout(function() {
           $('input_6').hint('ex: email@yahoo.com');
        }, 20);
+if (window.JotForm && JotForm.accessible) $('input_19').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_22').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_23').setAttribute('tabindex',0);
 if (window.JotForm && JotForm.accessible) $('input_11').setAttribute('tabindex',0);
 	JotForm.newDefaultTheme = true;
 	JotForm.extendsNewTheme = false;
 	JotForm.newPaymentUIForNewCreatedForms = false;
 	JotForm.newPaymentUI = true;
+      JotForm.alterTexts({"couponApply":"Apply","couponBlank":"Please enter a coupon.","couponChange":"","couponEnter":"Enter coupon","couponExpired":"Coupon is expired. Please try another one.","couponInvalid":"Coupon is invalid.","couponValid":"Coupon is valid.","shippingShipping":"Shipping","taxTax":"Tax","totalSubtotal":"Subtotal","totalTotal":"Total"}, true);
     /*INIT-END*/
 	});
 
-   JotForm.prepareCalculationsOnTheFly([null,{"name":"clickTo","qid":"1","text":"Customer Details:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Name","type":"control_fullname"},null,null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},{"name":"clickTo7","qid":"7","text":"","type":"control_text"},null,null,null,{"name":"feedbackAbout11","qid":"11","text":"Feedback about us:","type":"control_textarea"}]);
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"clickTo","qid":"1","text":"Customer Details:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Name","type":"control_fullname"},null,null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},null,null,null,null,{"name":"feedbackAbout11","qid":"11","text":"Feedback about us:","type":"control_textarea"},null,null,null,null,null,{"name":"invoiceId","qid":"17","text":"Invoice ID","type":"control_autoincrement"},null,{"description":"","name":"id","qid":"19","subLabel":"","text":"Product ID","type":"control_textbox"},null,null,{"description":"","name":"description","qid":"22","subLabel":"","text":"Product Description","type":"control_textbox"},{"description":"","name":"price","qid":"23","subLabel":"","text":"Price","type":"control_textbox"}]);
    setTimeout(function() {
-JotForm.paymentExtrasOnTheFly([null,{"name":"clickTo","qid":"1","text":"Customer Details:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Name","type":"control_fullname"},null,null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},{"name":"clickTo7","qid":"7","text":"","type":"control_text"},null,null,null,{"name":"feedbackAbout11","qid":"11","text":"Feedback about us:","type":"control_textarea"}]);}, 20); 
+JotForm.paymentExtrasOnTheFly([null,{"name":"clickTo","qid":"1","text":"Customer Details:","type":"control_head"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"fullName3","qid":"3","text":"Full Name","type":"control_fullname"},null,null,{"name":"email6","qid":"6","subLabel":"example@example.com","text":"E-mail","type":"control_email"},null,null,null,null,{"name":"feedbackAbout11","qid":"11","text":"Feedback about us:","type":"control_textarea"},null,null,null,null,null,{"name":"invoiceId","qid":"17","text":"Invoice ID","type":"control_autoincrement"},null,{"description":"","name":"id","qid":"19","subLabel":"","text":"Product ID","type":"control_textbox"},null,null,{"description":"","name":"description","qid":"22","subLabel":"","text":"Product Description","type":"control_textbox"},{"description":"","name":"price","qid":"23","subLabel":"","text":"Price","type":"control_textbox"}]);}, 20); 
 </script>
 </head>
 <body>
@@ -597,10 +601,37 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"clickTo","qid":"1","text":"Customer
           </span>
         </div>
       </li>
-      <li class="form-line" data-type="control_text" id="id_7">
-        <div id="cid_7" class="form-input-wide" data-layout="full">
-          <div id="text_7" class="form-html" data-component="text">
-          </div>
+      <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textbox" id="id_19">
+        <label class="form-label form-label-top form-label-auto" id="label_19" for="input_19">
+          Product ID
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_19" class="form-input-wide jf-required" data-layout="half">
+          <input type="text" id="input_19" name="q19_id" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_19" required="" />
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-2 jf-required" data-type="control_textbox" id="id_22">
+        <label class="form-label form-label-top form-label-auto" id="label_22" for="input_22">
+          Product Description
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_22" class="form-input-wide jf-required" data-layout="half">
+          <input type="text" id="input_22" name="q22_description" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_22" required="" />
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_textbox" id="id_23">
+        <label class="form-label form-label-top form-label-auto" id="label_23" for="input_23">
+          Price
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div id="cid_23" class="form-input-wide jf-required" data-layout="half">
+          <input type="text" id="input_23" name="q23_price" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_23" required="" />
         </div>
       </li>
       <li class="form-line" data-type="control_textarea" id="id_11">
@@ -651,6 +682,7 @@ for (var i = 0; i < all_spc.length; i++)
       <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=211702550867354&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
     </div>
   </div>
+  <input type="hidden" id="input_17" name="q17_invoiceId" class="form-textbox form-hidden" value="# INV-8CCC1V" data-component="autoincrement" />
 </form></body>
 </html>
 <script type="text/javascript">JotForm.ownerView=true;</script><script type="text/javascript">JotForm.forwardToEu=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.25987"></script>
