@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="mainStyle.css">
 
     <script>
-        const productID = 0;
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        var productID = `${filename}`.match(/\d+/)[0]
+
         $.getJSON("products.json", function(data) {
             const products = data.product
             for (var i = 0; i < products.length; i++) {
