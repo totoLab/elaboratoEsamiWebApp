@@ -2,22 +2,22 @@
     "product": [
         {
             "id": "1",
-            "price": "",
+            "price": "10",
             "description": "Bull picture"
         },
         {
             "id": "2",
-            "price": "",
+            "price": "15",
             "description": "Elephant picture"
         },
         {
             "id": "3",
-            "price": "",
+            "price": "20",
             "description": "Tiger picture"
         },
         {
             "id": "4",
-            "price": "",
+            "price": "5",
             "description": "Cheetah picture"
         }
     ]
