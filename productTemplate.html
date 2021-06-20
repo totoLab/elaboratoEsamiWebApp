@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="mainStyle.css">
     <title>Product </title>
+
+    <script>
+        $.getJSON("products.json", function(data) {
+            data.product.forEach(function(value){ 
+                if (value.id = 1) {
+                    var id = value.id
+                    var description = value.description
+                    description = encodeURIComponent(description.trim());
+                    var price = value.price
+                    const gateawayUrl = `https://form.jotform.com/211702550867354?&id=${id}&description=${description}&price=${price}`;
+                    console.log(gateawayUrl);
+                    document.getElementById('gateaway').href = gateawayUrl
+                };
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="topbar">
-        <a href="index.html"><button >Torna indietro</button></a>
-        <button>Burger menu</button>
+        <a href="index.html"><div class=mainTitle><img src=imgs/logo.png ><h1 style="display: inline">ntolab&apos;s Store</h1></div></a>
     </div>
 
     <div class="productStuff">
         <h4 class="title">Product </h4>
         <img class="productImg" src="imgs/" alt="">
         <div class="info">
-            <p>Price: </p>
+            <p>Price: €</p>
             <p>Description: </p>
         </div>
-            <a href="form/purchase.html"><button class="buy">Place an order now!</button></a>
+            <a id="gateaway" href="#"><button class="buy">Place an order now!</button></a>
     </div>
     
         
