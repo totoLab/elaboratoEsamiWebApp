@@ -1,0 +1,24 @@
+{
+    "product": [
+        {
+            "id": "1",
+            "price": "",
+            "description": "Bull picture"
+        },
+        {
+            "id": "2",
+            "price": "",
+            "description": "Elephant picture"
+        },
+        {
+            "id": "3",
+            "price": "",
+            "description": "Tiger picture"
+        },
+        {
+            "id": "4",
+            "price": "",
+            "description": "Cheetah picture"
+        }
+    ]
+}
