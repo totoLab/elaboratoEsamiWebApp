@@ -5,26 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-
-
     <link rel="stylesheet" href="mainStyle.css">
-    <title>Product </title>
 
     <script>
+        const productID = 0;
         $.getJSON("products.json", function(data) {
-            data.product.forEach(function(value){ 
-                if (value.id = 1) {
-                    var id = value.id
-                    var description = value.description
+            const products = data.product
+            for (var i = 0; i < products.length; i++) {
+                if (products[i].id == productID) {
+                    var id = products[i].id;
+                    var description = products[i].description;
                     description = encodeURIComponent(description.trim());
-                    var price = value.price
-                    const gateawayUrl = `https://form.jotform.com/211702550867354?&id=${id}&description=${description}&price=${price}`;
-                    console.log(gateawayUrl);
-                    document.getElementById('gateaway').href = gateawayUrl
-                };
-            });
+                    var price = products[i].price;
+                    const gateawayUrl = `https://form.jotform.com/211702550867354?&id=${id}&description=${description}&price=${price}€`;
+                    document.getElementById('gateaway').href = gateawayUrl;
+                    document.getElementById('productImg').src = `imgs/${productID}.png`;
+                    document.getElementById("price").innerHTML = `Price: € ${products[i].price}`;
+                    document.getElementById("description").innerHTML = `Description: ${products[i].description}`;
+                    document.getElementById("pageTitle").innerHTML = `Product ${productID}`;
+                    
+                    document.getElementById("tabTitle").innerHTML = `Product ${productID} - ${products[i].description}`;
+                }
+            }
         });
     </script>
+    <title id="tabTitle">Product </title>
 </head>
 <body>
     <div class="topbar">
@@ -32,11 +37,11 @@
     </div>
 
     <div class="productStuff">
-        <h4 class="title">Product </h4>
-        <img class="productImg" src="imgs/" alt="">
+        <h4 id="pageTitle">Product </h4>
+        <img id="productImg" src="#" alt="">
         <div class="info">
-            <p>Price: €</p>
-            <p>Description: </p>
+            <p id="price">Price: €</p>
+            <p id="description">Description: </p>
         </div>
             <a id="gateaway" href="#"><button class="buy">Place an order now!</button></a>
     </div>
